@@ -1,3 +1,11 @@
+span.icon-left {
+  margin-right: 4px;
+}
+
+span.icon-right {
+  margin-left: 4px;
+}
+
 .App {
   text-align: center;
 }
