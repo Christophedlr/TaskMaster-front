@@ -28,7 +28,9 @@ export class NavbarElement extends React.Component {
             <>
                 <li className={`nav-item dropdown ${(this.props.className) ? this.props.className : ""}`}>
                     <a href={"#"} role={"button"} data-bs-toggle={"dropdown"} className={"nav-link dropdown-toggle"}>
-                        {this.props.text}
+                        {this.props.pos === "right" && this.props.text}
+                        {this.props.icon && <span className={`${this.props.icon} ${this.props.pos === "right" ? "icon-right" : "icon-left"}`}/>}
+                        {this.props.pos !== "right" && this.props.text}
                     </a>
 
                     <ul className={"dropdown-menu"}>
@@ -42,7 +44,9 @@ export class NavbarElement extends React.Component {
                 <>
                     <li>
                         <a href={this.props.link} className={`dropdown-item ${(this.props.className ? " "+this.props.className : "")}`}>
-                            {this.props.text}
+                            {this.props.pos === "right" && this.props.text}
+                            {this.props.icon && <span className={`${this.props.icon} ${this.props.pos === "right" ? "icon-right" : "icon-left"}`}/>}
+                            {this.props.pos !== "right" && this.props.text}
                         </a>
                     </li>
                 </>
@@ -57,7 +61,11 @@ export class NavbarElement extends React.Component {
             return (
                 <>
                     <li className="nav-item">
-                        <a href={this.props.link} className={`nav-link${(this.props.className ? " "+this.props.className : "")}`}>{this.props.text}</a>
+                        <a href={this.props.link} className={`nav-link${(this.props.className ? " "+this.props.className : "")}`}>
+                            {this.props.pos === "right" && this.props.text}
+                            {this.props.icon && <span className={`${this.props.icon} ${this.props.pos === "right" ? "icon-right" : "icon-left"}`}/>}
+                            {this.props.pos !== "right" && this.props.text}
+                        </a>
                     </li>
                 </>
             );
